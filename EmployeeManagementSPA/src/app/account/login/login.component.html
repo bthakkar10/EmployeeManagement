@@ -1,0 +1,37 @@
+
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-content>
+        <div  class="row">
+        <div class="col-md-6">
+            <img class="login-img" mat-card-image src="../../../assets/login-img.jpg" alt="Login">
+        </div>
+        <form [formGroup]="LoginForm" (ngSubmit)="OnSubmit()"  class="col-md-6 d-flex justify-content-center flex-column">
+           <h4 class="text-center mb-3">Welcome Back!!</h4>
+            <mat-form-field>
+                <mat-label>Enter Your Email Address</mat-label>
+                <a  mat-icon-button matSuffix> <mat-icon>mail</mat-icon> </a>
+                <input   matInput placeholder="Enter your email" formControlName="email"  required>
+     
+                <mat-error *ngIf="LoginForm.controls['email'].errors?.['pattern']">Please enter valid email</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required formControlName="password">
+                <mat-label>Enter Your Password</mat-label>
+                <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </a>
+           
+                <mat-error *ngIf="LoginForm.controls['password'].errors?.['pattern']">Password must containe at least 8 characters including 1 capital letter, 1 small letter, 1 digit and 1 special character</mat-error>
+            </mat-form-field>
+            <button class="mx-auto d-block" mat-raised-button color="primary" type="submit" [disabled]="submitting">
+                 <span *ngIf="submitting"> <mat-spinner></mat-spinner></span>  
+                Login </button>
+               
+           
+            <mat-card-footer>Don't Have An Account? <a routerLink="/register">Register Now!!</a></mat-card-footer>
+            <mat-card-footer>Don't remember your password? <a routerLink="/forget-password">Reset Now!!</a></mat-card-footer>
+        </form>
+    </div>
+    </mat-card-content>
+

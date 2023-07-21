@@ -1,0 +1,22 @@
+<mat-card-header>
+    <mat-card-title>
+        <div *ngIf="Failed == true">
+            <h3> Oops!! Verification Failed!!</h3>
+        </div>
+    </mat-card-title>
+    <mat-card-title>
+        <div *ngIf="VerifingEmail == true">
+            <h3> Verifying...</h3>
+        </div>
+    </mat-card-title>
+    <div *ngIf="VerifiedEmail == true">
+        <h3>
+            <mat-card-title>
+                <mat-icon>Done</mat-icon>
+                Congratulations!! You have been successfully verified!!
+            </mat-card-title>
+            <a routerLink="">Please click here to Login Now!!</a>
+        </h3>
+    </div>
+
+</mat-card-header>

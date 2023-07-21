@@ -1,0 +1,80 @@
+<mat-card-title>Register</mat-card-title>
+<mat-card-content>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="register-img" mat-card-image src="../../../assets/register-img.jpg" alt="Photo ">
+            <mat-card-subtitle class="text-center">Already Registered? <a routerLink=""> Login Now!!
+                </a></mat-card-subtitle>
+        </div>
+        <form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()" class="col-md-6">
+            <mat-form-field>
+                <mat-label>Enter First Name</mat-label>
+                <input matInput placeholder="First Name" formControlName="firstName" required>
+
+                <mat-error *ngIf="RegisterForm.controls['firstName'].errors?.['pattern']">Maximum 16 characters are
+                    allowed</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Enter Last Name</mat-label>
+                <input matInput placeholder="Last Name" formControlName="lastName" required>
+
+                <mat-error *ngIf="RegisterForm.controls['lastName'].errors?.['pattern']">Maximum 16 characters are
+                    allowed</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Enter Your Email Address</mat-label>
+                <a matSuffix> <mat-icon>mail</mat-icon> </a>
+                <input matInput placeholder="Enter your email" formControlName="email" required>
+
+                <mat-error *ngIf="RegisterForm.controls['email'].errors?.['pattern']">Please enter valid
+                    email</mat-error>
+            </mat-form-field>
+            <mat-form-field hintLabel="Max 10 digits">
+                <mat-label>Enter Your Phone Number</mat-label>
+                <a matSuffix> <mat-icon>phone</mat-icon> </a>
+                <input matInput #input maxlength="10" placeholder="Phone Number" formControlName="contactno" required>
+                <mat-hint align="end">{{input.value.length || 0}}/10</mat-hint>
+                <mat-error *ngIf="RegisterForm.controls['contactno'].errors?.['pattern']">Only digits are
+                    allowed!</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Select your Company</mat-label>
+                <mat-select required placeholder="Select Company" formControlName="companyId">
+                    <mat-option *ngFor="let company of companies"
+                        [value]="company.companyId">{{company.companyName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Enter your password" required [type]="hide ? 'password' : 'text'"
+                    formControlName="password">
+                <mat-label>Enter Your Password</mat-label>
+                <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </a>
+                <mat-error *ngIf="RegisterForm.controls['password'].errors?.['pattern']">Password must containe at least
+                    8 characters including 1 capital letter, 1 small letter, 1 digit and 1 special character</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Confirm Your password" required [type]="Confirmhide ? 'password' : 'text'"
+                    formControlName="confirmPass">
+                <mat-label>Re - Enter Your Password</mat-label>
+                <a mat-icon-button matSuffix (click)="Confirmhide = !Confirmhide"
+                    [attr.aria-label]="'Hide confirm password'" [attr.aria-pressed]="Confirmhide">
+                    <mat-icon>{{Confirmhide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </a>
+                <mat-error
+                    *ngIf="RegisterForm.controls['confirmPass'].errors?.['PasswordValidators.MatchValidator']">Password
+                    and Confirm Password does not match</mat-error>
+            </mat-form-field>
+
+            <button class="mx-auto d-block" mat-raised-button color="primary" type="submit" [disabled]="submitting">
+                <span *ngIf="submitting"> <mat-spinner></mat-spinner></span>
+                Submit</button>
+
+        </form>
+    </div>
+</mat-card-content>

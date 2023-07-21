@@ -1,0 +1,129 @@
+<mat-card class="container mt-5">
+    <mat-card-title>
+        <h1 class="text-center mb-5">{{title}}</h1>
+    </mat-card-title>
+    <mat-card-content>
+        <form *ngIf="!loading" [formGroup]="AddEditUserForm" (ngSubmit)="OnSubmit()">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Enter Your First Name</mat-label>
+                        <input matInput placeholder="First Name" formControlName="firstName" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Enter Your Last Name</mat-label>
+                        <input matInput placeholder="Last Name" formControlName="lastName" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Enter Your Email Id</mat-label>
+                        <a matSuffix> <mat-icon>mail</mat-icon> </a>
+                        <input matInput placeholder=" Email Id" formControlName="email" required>
+                        <mat-error *ngIf="AddEditUserForm.controls['email'].errors?.['pattern']">You must
+                            enter a valid email address</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field hintLabel="Max 10 digits">
+                        <mat-label>Enter Your Phone Number</mat-label>
+                        <a matSuffix> <mat-icon>phone</mat-icon> </a>
+                        <input matInput #input maxlength="10" placeholder="Phone Number" formControlName="contactNo"
+                            required>
+                        <mat-hint align="end">{{input.value.length || 0}}/10</mat-hint>
+                        <mat-error *ngIf="AddEditUserForm.controls['contactNo'].errors?.['pattern']">Only digits
+                            are allowed!</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="row" *ngIf="!id">
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                                formControlName="password">
+                            <mat-label>Enter Your Password</mat-label>
+                            <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </a>
+                            <mat-error *ngIf="AddEditUserForm.controls['password'].errors?.['pattern']">Password must
+                                containe
+                                at
+                                least 8 characters including 1 capital letter, 1 small letter, 1 digit and 1 special
+                                character</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <input matInput placeholder="Confirm Your password"
+                                [type]="Confirmhide ? 'password' : 'text'" formControlName="confirmPass">
+                            <mat-label>Re - Enter Your Password</mat-label>
+                            <a mat-icon-button matSuffix (click)="Confirmhide = !Confirmhide"
+                                [attr.aria-label]="'Hide confirm password'" [attr.aria-pressed]="Confirmhide">
+                                <mat-icon>{{Confirmhide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </a>
+                            <mat-error
+                                *ngIf="AddEditUserForm.controls['confirmPass'].errors?.['PasswordValidators.MatchValidator']">Password
+                                and Confirm Password does not match</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="IsAdminUser">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Select Company</mat-label>
+                        <mat-select required placeholder="Select Company" formControlName="companyId">
+                            <mat-option *ngFor="let company of companies"
+                                [value]="company.companyId">{{company.companyName}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Select Role</mat-label>
+                        <mat-select required placeholder="Select Role" formControlName="roleId">
+                            <mat-option *ngFor="let role of roles" [value]="role.roleId">{{role.roleName}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="IsAdminUser">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Status</mat-label>
+                        <mat-select required placeholder="Select Status" formControlName="status">
+                            <mat-option [value]="true">Active</mat-option>
+                            <mat-option [value]="false">In-Active</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Select User Type</mat-label>
+                        <mat-select required placeholder="Select User Type" formControlName="userType">
+                            <mat-option value="user">User</mat-option>
+                            <mat-option value="admin">Admin</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <button class="mx-auto d-block" mat-raised-button color="primary" type="submit" [disabled]="submitting">
+                <span *ngIf="submitting"> <mat-spinner></mat-spinner></span>
+                Submit</button>
+        </form>
+    </mat-card-content>
+    <div class="d-block m-auto mb-5">
+        <span *ngIf="loading"> <mat-spinner></mat-spinner></span>
+    </div>
+</mat-card>

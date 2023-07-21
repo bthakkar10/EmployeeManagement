@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.password-icon {
+  position: absolute !important;
+  top: 28%;
+  translate: -100% 0;
+}
+
+.password-icon:hover {
+  color: #00fcb6;
+}
+
+.password-div {
+  position: relative;
+}
+
+.links {
+  color: white;
+  text-decoration: none;
+}
+
+.current {
+  background-color: #0e4acc;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+}

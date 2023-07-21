@@ -1,0 +1,76 @@
+<div class="container">
+    <h2 class="text-center mt-5 mb-4">{{title}}</h2>
+
+    <div fxLayout fxLayoutAlign="left center" fxLayoutGap="15%">
+        <mat-form-field fxFlex="40%">
+            <input matInput type="text" (keyup)="doSearch($any($event.target).value)" placeholder="Search">
+        </mat-form-field>
+
+        <!-- <mat-form-field fxFlex="20%">
+            <!-- *ngFor="let filter of filterSelectObj"  
+            <mat-label>Filter by Company </mat-label>
+            <mat-select matNativeControl name=CompanyName (change)="onChange($any($event.target).value)"
+                [(ngModel)]="selectedCompany">
+                <!-- [(ngModel)]="filter.modelValue" (change)="filterChange(filter,$event)" 
+                <mat-option value="">All</mat-option>
+                <mat-option [value]="company.companyName"
+                    *ngFor="let company of companies">{{company.companyName}}</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+
+        <button *ngIf="IsAdminUser || currentRolePermission?.canAdd" mat-raised-button color="primary" type="submit"
+            fxFlex="10%" routerLink="/user/AddUser">
+            <mat-icon class="mat-10">add_circle</mat-icon>
+            Add
+        </button>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort matSortStart="desc">
+        <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Full Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="contactNo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Conatct No </th>
+            <td mat-cell *matCellDef="let element"> {{element.contactNo}} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="CompanyName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+            <td mat-cell *matCellDef="let element">
+                {{ companyNamesMap.get(element.companyId) }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element">
+                <button *ngIf="IsAdminUser || currentRolePermission?.canEdit" mat-icon-button color="accent"
+                    routerLink="/user/EditUser/{{element.userId}}">
+                    <mat-icon class="mat-18">edit</mat-icon>
+                </button>
+
+                <button *ngIf="IsAdminUser || currentRolePermission?.canDelete" mat-icon-button color="warn"
+                    (click)="openDeleteConfirmationDialog(element.userId)">
+                    <mat-icon class="mat-18">delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10, 20]" [showFirstLastButtons]="true"
+        [length]="dataSource.data.length">
+    </mat-paginator>
+</div>

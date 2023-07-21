@@ -1,0 +1,14 @@
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\bin\Debug\net6.0\EmployeeManagement.Entity.deps.json
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\bin\Debug\net6.0\EmployeeManagement.Entity.runtimeconfig.json
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\bin\Debug\net6.0\EmployeeManagement.Entity.dll
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\bin\Debug\net6.0\EmployeeManagement.Entity.pdb
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\EmployeeManagement.Entity.csproj.AssemblyReference.cache
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\EmployeeManagement.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\EmployeeManagement.Entity.AssemblyInfoInputs.cache
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\EmployeeManagement.Entity.AssemblyInfo.cs
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\EmployeeManagement.Entity.csproj.CoreCompileInputs.cache
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\EmployeeManagement.Entity.dll
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\refint\EmployeeManagement.Entity.dll
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\EmployeeManagement.Entity.pdb
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\EmployeeManagement.Entity.genruntimeconfig.cache
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Entity\obj\Debug\net6.0\ref\EmployeeManagement.Entity.dll

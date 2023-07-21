@@ -1,0 +1,17 @@
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\bin\Debug\net6.0\EmployeeManagement.Repository.deps.json
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\bin\Debug\net6.0\EmployeeManagement.Repository.runtimeconfig.json
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\bin\Debug\net6.0\EmployeeManagement.Repository.dll
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\bin\Debug\net6.0\EmployeeManagement.Repository.pdb
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\bin\Debug\net6.0\EmployeeManagement.Entity.dll
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\bin\Debug\net6.0\EmployeeManagement.Entity.pdb
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.csproj.AssemblyReference.cache
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.AssemblyInfoInputs.cache
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.AssemblyInfo.cs
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.csproj.CoreCompileInputs.cache
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.csproj.CopyComplete
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.dll
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\refint\EmployeeManagement.Repository.dll
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.pdb
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\EmployeeManagement.Repository.genruntimeconfig.cache
+C:\Users\pct127\Desktop\EmployeeManagement\EmployeeManagement.Repository\obj\Debug\net6.0\ref\EmployeeManagement.Repository.dll

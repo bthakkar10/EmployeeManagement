@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>
+    {{ data.message }}
+    <mat-form-field *ngIf="!data.message">
+        <mat-label>Enter Role</mat-label>
+        <input matInput [(ngModel)]="data.InputValue" placeholder="Role Name" required>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="mx-auto d-block">
+        <button mat-raised-button (click)="onCancel()">Cancel</button>
+        <button mat-raised-button color="primary" (click)="onConfirm()">{{data.ConfirmText}}</button>
+    </div>
+</mat-dialog-actions>

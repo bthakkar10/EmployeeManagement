@@ -1,0 +1,7 @@
+.footer{
+    position: sticky;
+    overflow: hidden;
+    top:100%;
+    /* background-color: #495057;
+    color:#f8f9fa; */
+}

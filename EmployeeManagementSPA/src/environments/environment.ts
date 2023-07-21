@@ -1,0 +1,11 @@
+
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:7234',
+ 
+};
+
+// export const AdminRestrictedPages = {
+//   AdminPages: ['company', 'roles']
+// }
+
